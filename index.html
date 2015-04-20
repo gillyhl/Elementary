@@ -1,0 +1,392 @@
+<html>
+	<head>
+		<meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+		<link rel="icon" type="image/png" href="flavicon.png" />
+		<title>Elementary</title>
+		<link href='http://fonts.googleapis.com/css?family=Lato:100,400,900' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/root.css" />
+		<link rel="stylesheet" href="css/lvl_comp.css" />
+		<link rel="stylesheet" href="css/lvl_start.css" />
+		<link rel="stylesheet" href="css/modus.css" />
+		<link rel="stylesheet" href="css/edu.css" />
+		<link rel="stylesheet" href="css/game_rules.css" />
+		<link rel="stylesheet" href="css/loading.css" />
+		<link rel="stylesheet" href="css/hyp.css" />
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/jquery.pulse.js"></script>
+		<script src="js/jquery.panelSnap.js"></script>
+		<script src="js/jquery.disablescroll.js"></script>
+		<script src="js/init_vars.js"></script>
+		<script src="js/init_canvas.js"></script>
+		<script src="js/drag_buttons.js"></script>
+		<script src="js/drag_canvas.js"></script>
+ 		<script src="js/draw.js"></script>
+ 		<script src="js/edu.js"></script>
+ 		<script src="js/game_rules.js"></script>
+ 		<script src="js/hyp.js"></script>
+<!-- 
+		<script src="init_panel_snap.js"></script>
+ -->
+	</head>
+	<body>
+		<section id="introduction">
+			<div class="down_arrow unselectable" style="z-index: 10;">
+					&#x25BE;
+ 			</div>
+			<div class="intro-bg"></div>
+			<div class="intro-bg soft_blur_overlay"></div>
+			<h1 class="zantroke">ELEMENTARY</h1>
+			<h3>LOGIC'S THE NAME, LOGIC'S THE GAME</h3>
+		</section>
+		<section id="education">
+<!-- 
+			<h2 class="zantroke">WHAT IS LOGIC?</h2>
+			<p class="normal_size">BABY DON'T HURT ME, DON'T HURT ME, NO MORE!</p>
+ -->
+ 			<div class="down_arrow unselectable">
+ 				&#x25BE;
+ 			</div>
+ 			<div class="viewport_holder unselectable">
+				<div id="education_viewport">
+					<div id="education_holder">
+						<div class="education_content" id="beginning_content">
+							<h2 class="nexa no_margin_top">WHAT IS LOGIC?</h2>
+							<p class="subtitle">BABY DON'T HURT ME, DON'T HURT ME, NO MORE!</p>
+							<p>It begins with this guy called Chrysippus, don't ask me how to say his name! He was a philosopher brain-box!</p>
+							<p>He was big into his logic and he invented the system that is the basis of this game</p>
+							<p>His system was to help better understand life, the universe and everything!</p>
+							<p>He looks like one mean looking fellow!</p>
+							<div class="edu_button_holder">
+								<div class="edu_button unselectable edu_right" style="color: #222;">NEXT</div>
+								<div style="clear: both"></div>
+							</div>
+						</div>
+						<div class="education_content">
+							<h2 class="nexa no_margin_top">THE PROPOSAL</h2>
+							<p class="subtitle">Not the one starring Ryan Whatshisface and Sandra Dreamy Bullock</p>
+							<p>Look at this block below, it represents something very special. It has either one of two values: TRUE or FALSE.</p>
+							<div class="demo_block"></div>
+							<p>This block could stand for "Bob likes Apples". <span class="handmade" style="font-size: 0.6em;">GOOD ON YOU BOB, APPLES ARE GOOD FOR YOU.</span></p>
+							<p>Each block in this game, big or small, is what the pros call a <span class="pink_block lato_bold">proposition</span>. Propositions have this special characteristic of being either true or false.</p>
+							<div class="edu_button_holder">
+								<div class="edu_button unselectable edu_right">NEXT</div>
+								<div class="edu_button unselectable edu_left">PREV</div>
+								<div style="clear: both"></div>
+							</div>
+						</div>
+						<div class="education_content">
+							<h2 class="nexa no_margin_top" id="alternate_col">TIME TO CONNECT</h2>
+							<p class="subtitle">We've got to stick together!</p>
+							<p>As with all things that revolve around blocks, we like to build with them!</p>
+							<p>Connecting blocks in the following manner is like saying AND between the two blocks.</p>
+							<div class="demo_block_2">
+								<div class="demo_small_block float_left" style="background: rgb(69, 155, 236);"></div>
+								<div class="demo_small_block float_left" style="background: rgb(179, 98, 164);"></div>
+								<div style="clear: both;"></div>
+							</div>
+							<p>In this example, the block is only true IF the <span class="blue_block lato_bold">blue block</span> AND the <span class="pink_block lato_bold">pink block</span> are TRUE. In all other cases, this block is false</p>
+							<div class="edu_button_holder">
+								<div class="edu_button unselectable edu_right">NEXT</div>
+								<div class="edu_button unselectable edu_left">PREV</div>
+								<div style="clear: both"></div>
+							</div>
+						</div>
+						<div class="education_content">
+							<h2 class="nexa no_margin_top">VERTICALLY?</h2>
+							<p class="subtitle">Jump up and get down. Jump around, jump around. </p>
+							<div class="demo_block_3 float_right">
+								<div class="demo_small_block" style="background: rgb(69, 155, 236);"></div>
+								<div class="demo_small_block" style="background: rgb(179, 98, 164);"></div>
+							</div>
+							<p>This case is a bit more special and needs a clever brain to get around. We trust you to have that brain!</p>
+							<p>Vertically connected blocks are <span class="lato_bold">conditional</span>, by that we mean if one thing happens, then something else happens. This is called an <span class="lato_bold">IMPLICATION.</span></p>
+							<p>The block on the right symbolises IF <span class="blue_block lato_bold">blue</span> THEN <span class="pink_block lato_bold">pink</span></p>
+							<p>This block is only FALSE if the <span class="blue_block lato_bold">blue block</span> is TRUE and the <span class="pink_block lato_bold">pink block</span> is FALSE.</p>
+							<p>Confusing? Let's look into this one a bit more!</p>
+							<div class="edu_button_holder">
+								<div class="edu_button unselectable edu_right">NEXT</div>
+								<div class="edu_button unselectable edu_left">PREV</div>
+								<div style="clear: both"></div>
+							</div>
+						</div>
+						<div class="education_content">
+							<h2 class="nexa no_margin_top">CONDITIONALLY</h2>
+							<p class="subtitle">The less successful Katy Perry song.</p>
+							<div class="demo_block_3 float_left">
+								<div class="demo_small_block" style="background: rgb(69, 155, 236);"></div>
+								<div class="demo_small_block" style="background: rgb(179, 98, 164);"></div>
+							</div>
+							<p>Let's say that the <span class="blue_block lato_bold">blue block</span> means that "you can see the sun".</p>
+							<p>Let us also say that the <span class="pink_block lato_bold">pink block</span> means "it is day time".</p>
+							<p>This whole block then means "IF you can see the sun, THEN it is day time".</p>
+							<p>If you can see the sun and it's daytime this sentence is TRUE. If you can see the sun and it's nighttime then this statement is FALSE. All makes sense here.</p>
+							<p>If you can't see the sun, it still may be day time, it's just hidden behind the clouds, or it is night time. Either way this statement is still true</p>
+							<div class="edu_button_holder">
+								<div class="edu_button unselectable edu_right">NEXT</div>
+								<div class="edu_button unselectable edu_left">PREV</div>
+								<div style="clear: both"></div>
+							</div>
+						</div>
+						<div class="education_content">
+							<h2 class="nexa no_margin_top">THE PROOF IS IN...</h2>
+							<p class="subtitle">mmmmmm Cake</p>
+							<p>Now for the nitty gritty. We know what propositions are, now we need to know what a proof is.</p>
+							<p>Some info for those who are interested, the game you will be playing uses the proof system called <span class="lato_bold">NATURAL DEDUCTION</span>.</p>
+							<p>In this form you are given assumptions, that is, propositions that we believe to be true.</p>
+							<p>From this we try to create another proposition that is true from these assumptions</p>
+							<p>This is done by applying some rules. Let's take a gander!</p>
+							<div class="edu_button_holder">
+								<div class="edu_button unselectable edu_right">NEXT</div>
+								<div class="edu_button unselectable edu_left">PREV</div>
+								<div style="clear: both"></div>
+							</div>
+						</div>
+						<div class="education_content">
+							<h2 class="nexa no_margin_top" style="font-size: 3.94em;">MAKING A CONNECTION</h2>
+							<p class="subtitle">It's the logic of love!</p>
+							<p>Say we assume the two blocks below to be <span class="lato_bold">TRUE...</span></p>
+							<div class="demo_block_4">
+								<div class="demo_small_block" style="background: rgb(69, 155, 236); margin-right: 76px;"></div>
+								<div class="demo_small_block" style="background: rgb(179, 98, 164);"></div>
+							</div>
+							<p>We can then say we know that the block below will be true.</p>
+							<div class="demo_block_2">
+								<div class="demo_small_block float_left" style="background: rgb(69, 155, 236);"></div>
+								<div class="demo_small_block float_left" style="background: rgb(179, 98, 164);"></div>
+								<div style="clear: both;"></div>
+							</div>
+							<p>This rule is true for all two blocks we assume to be true.</p>
+							<div class="edu_button_holder">
+								<div class="edu_button unselectable edu_right">NEXT</div>
+								<div class="edu_button unselectable edu_left">PREV</div>
+								<div style="clear: both"></div>
+							</div>
+						</div>
+						<div class="education_content">
+							<h2 class="nexa no_margin_top" style="font-size: 3.94em;">SPLITTING UP</h2>
+							<p class="subtitle">I hope we can remain friends!</p>
+							<p>We can say the opposite of before. If we have the block below...</p>
+							<div class="demo_block_2">
+								<div class="demo_small_block float_left" style="background: rgb(69, 155, 236);"></div>
+								<div class="demo_small_block float_left" style="background: rgb(179, 98, 164);"></div>
+								<div style="clear: both;"></div>
+							</div>
+							<p>We can split this block up into the two blocks below!</p>
+							<div class="demo_block_4">
+								<div class="demo_small_block" style="background: rgb(69, 155, 236); margin-right: 76px;"></div>
+								<div class="demo_small_block" style="background: rgb(179, 98, 164);"></div>
+							</div>
+							<p>Isn't that neat?</p>
+							<div class="edu_button_holder">
+								<div class="edu_button unselectable edu_right">NEXT</div>
+								<div class="edu_button unselectable edu_left">PREV</div>
+								<div style="clear: both"></div>
+							</div>
+						</div>
+						<div class="education_content">
+							<h2 class="nexa no_margin_top">MODUS EXPLONENS</h2>
+							<p class="subtitle">Boring people call it Modus Ponens but where is the fun in that?</p>
+							<div class="demo_block_3 float_left">
+								<div class="demo_small_block" style="background: rgb(69, 155, 236);"></div>
+								<div class="demo_small_block" style="background: rgb(179, 98, 164);"></div>
+							</div>
+							<p>In returns our old friend...the implication.</p>
+							<p>If we know the implication to be true AND the <span class="pink_block lato_bold">pink block</span> to be true we can then say...</p>
+							<p>Drum roll please... We can create this block...</p>
+							<div class="demo_block" style="background:rgb(69, 155, 236);"></div>
+							<div class="edu_button_holder">
+								<div class="edu_button unselectable edu_right">NEXT</div>
+								<div class="edu_button unselectable edu_left">PREV</div>
+								<div style="clear: both"></div>
+							</div>
+						</div>
+						<div class="education_content" id="js">
+							<h2 class="nexa no_margin_top">A LITTLE MORE...</h2>
+							<p class="subtitle">explanation, a little more action, please.</p>
+							<p>The main idea for <span class="lato_bold">Modus Explonens</span> is that if you have two blocks with identical tops but different bottoms, you can apply the rule.</p>
+							<p>You will then get the bottom part of the block that isn't in the other one.</p>
+							<p>Savvy?</p>
+							<div class="edu_button_holder">
+								<div class="edu_button unselectable edu_right final">NEXT</div>
+								<div class="edu_button unselectable edu_left">PREV</div>
+								<div style="clear: both"></div>
+							</div>
+						</div>
+						<div class="education_content">
+							<h2 class="nexa no_margin_top">YOU ARE READY</h2>
+							<p class="subtitle">Maybe...</p>
+							<p style="position: relative; top: 80px; text-align: center;">Read the section below to put what you've learned here to the test using this FABULOUS game.</p>
+							<div class="edu_button_holder">
+								<div class="edu_button unselectable edu_left">PREV</div>
+								<div style="clear: both"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="game_rules">
+			<div class="down_arrow unselectable">
+ 				&#x25BE;
+ 			</div>
+			<div class="viewport_holder">
+				<div id="game_rules_viewport">
+					<div id="game_rules_holder">
+						<div class="game_rules_content" id="sound_of_music">
+							<h2 class="nexa no_margin_top">THE GAME <span id="lost_game">YOU JUST LOST IT</span></h2>
+							<div id="p_holder_1">
+								<p>The aim of this game is to construct proofs using the rules described above.</p>
+								<p>It's more fun than it sounds...honest.</p>
+								<p>Let's talk about using the game.</p>
+								<p>There is only one place to start and that is at the very beginning; a very good place to start.</p>
+							</div>
+							<div class="tut_button_holder">
+								<div class="tut_button unselectable tut_right">NEXT</div>
+								<div style="clear: both"></div>
+							</div>
+						</div>
+						<div class="game_rules_content">
+							<h3 class="nexa no_margin_top">PLAY AREA</h3>
+							<img src="img/controls.png" class="controls_img" />
+							<div class="tut_button_holder">
+								<div class="tut_button unselectable tut_right">NEXT</div>
+								<div class="tut_button unselectable tut_left">PREV</div>
+								<div style="clear: both"></div>
+							</div>
+						</div>
+						<div class="game_rules_content">
+							<h3 class="nexa no_margin_top">CONNECTING BLOCKS</h3>
+							<img src="img/controls_2.gif" class="controls_img" />
+							<p>This creates the logic sentence, blue block AND pink block.</p>
+							<div class="tut_button_holder">
+								<div class="tut_button unselectable tut_right">NEXT</div>
+								<div class="tut_button unselectable tut_left">PREV</div>
+								<div style="clear: both"></div>
+							</div>
+						</div>
+						<div class="game_rules_content">
+							<h3 class="nexa no_margin_top">MODUS EXPLONENS</h3>
+							<img src="img/controls_4.png" class="controls_img" />
+							<div class="tut_button_holder">
+								<div class="tut_button unselectable tut_right final">NEXT</div>
+								<div class="tut_button unselectable tut_left">PREV</div>
+								<div style="clear: both"></div>
+							</div>
+						</div>
+						<div class="game_rules_content">
+							<h3 class="nexa no_margin_top">LEVEL COMPLETION</h3>
+							<img src="img/controls_3.png" class="controls_img" />
+							<div class="tut_button_holder">
+								<div class="tut_button unselectable tut_left">PREV</div>
+								<div style="clear: both"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 
+<div class="arrow_holder unselectable" id="game_left_arrow"><</div>
+				<div class="arrow_holder unselectable" id="game_right_arrow">></div>
+ -->
+			</div>
+		</section>
+		<section id="game">
+			<div id="game_title" class="zantroke">ELEMENTARY</div>
+			<div class="game_holder unselectable">
+				<div id="all_btn_holder">
+					<div class="button_holder">
+						<!-- 
+	<div class="selector" id="h_con" style="background-color: #333;">
+							<div><span>C</span></div></div>
+	 -->
+					<!-- WORK ON MAKING ICONS SCORLLABLE-->
+<!-- 						<div class="selector" id="imp_el" title="Modus Ponens"></div> -->
+<!-- 						<div class="selector" id="con_in" title="Conjunction Introduction"></div> -->
+<!-- 						<div class="selector" id="imp_in" title="Implication Introduction"></div> -->
+<!-- 						<div class="selector" id="ret" title="Return to Bar"></div> -->
+<!-- 						<div class="selector button" style="background-color: #eee;" data-wr="1" data-hr="1"><span>5</span></div> -->
+<!-- 						<div class="selector button neg" style="background-color: #eee;" data-wr="1" data-hr="1"><span>3</span></div> -->
+<!-- 						<div class="selector button" style="background-color: #FF3D13;" data-wr="1" data-hr="1"><span>7</span></div> -->
+<!-- 						<div class="selector button" style="background-color: #4BE6B5;" data-wr="1" data-hr="1"><span>7</span></div> -->
+<!-- 						<div class="selector button" style="background-color: #FC8DE1;" data-wr="1" data-hr="1"><span>7</span></div> -->
+<!-- 						<div class="selector button" style="background-color: #FFF67A;" data-wr="1" data-hr="1"><span>7</span></div> -->
+					</div>
+					<div class="selector" id="undo" title="Undo"></div>
+					<div class="selector" id="restart" title="Restart"></div>
+				</div>
+				<canvas class="tree" id="canvas" ondragover="event.preventDefault()">
+				</canvas>
+				<div class="level_overlay" id="level_start_template"></div>
+				<div class="level_overlay" id="level_start">
+					<p>LEVEL <span id="level_id">1</span></p>
+					<div id="start_btn">START LEVEL</div>
+				</div>
+				<div class="level_overlay" id="level_complete">
+					<img src="img/fwrk.png" id="fwrk_1" class="unselectable" />
+					<img src="img/fwrk.png" id="fwrk_2" class="unselectable" />
+					<div id="level_complete_header">
+						LEVEL COMPLETE
+					</div>
+					<div id="bottom_level_controls">
+						<div id="retry_level">retry</div>
+						<div><!--SUBMIT--></div>
+						<div id="next_level">next</div>
+					</div>
+				</div>
+				<div class="level_overlay" id="loading">
+					<div id="load_header">LOADING</div>
+					<img id="load_gif" src="img/220.gif" />
+					<p>FUN INCOMING</p>
+				</div>
+				<div class="level_overlay" id="modus_explain">
+					<h2><span id="oops">OOPS...</span><span id="fail">MODUS PONENS DOESN'T WORK LIKE THAT</span></h2>
+					<div id="example_holder">
+						<div class="sub_group red_brd" style="width: 87px; height: 87px">
+							<div class="demo_block" style="background: #4BE6B5"></div>
+							<div class="demo_block" style="background: #FC8DE1; left: 39px"></div>
+							<div class="demo_block" style="background: #FFF67A; top: 39px; width: 80px;"></div>
+						</div>
+			
+						<div class="sub_group green_brd" style="width: 87px; height: 47px; position: relative; margin-left: 57px;">
+							<div class="demo_block" style="background: #4BE6B5"></div>
+							<div class="demo_block" style="background: #FC8DE1; left: 39px"></div>
+						</div>
+					</div>
+					<div id="pointer"><img src="img/pointing-arrow.png" id="p_ar" style="opacity: 0"/>THIS IS HOW TO DO IT!</div>
+					<div id="gotcha">
+						<span>CLOSE</span>
+					</div>
+					<div id="explain">
+						TOPS OF BLOCKS MUST BE THE SAME
+					</div>
+				</div>
+				<div id="hyp" class="level_overlay">
+					<h2>PICK HYPOTHESIS</h2>
+					<div class="hyp_holder">
+						<div class="hyp">
+			
+						</div><!--
+						--><div class="hyp">
+			
+						</div><!--
+						--><div class="hyp">
+			
+						</div><!--
+						--><div class="hyp">
+			
+						</div>
+			
+					</div>
+					<div id="hyp_back">BACK</div>
+				</div>
+<!-- 
+				<div id="goal_area">
+
+				</div>
+ -->
+				<div style="clear:both;"></div>
+			</div>
+		</section>
+	</body>
+</html>
+
+<!-- BOB LIKES APPLES - GOOD ON YOU BOB-->

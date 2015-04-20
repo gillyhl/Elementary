@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<levels>
+	<level id="0">
+		<controls>
+			<control>imp_el</control>
+			<control>flag_in</control>
+			<control>flag_end</control>
+			<control>ret</control>
+		</controls>
+		<assumptions>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(69, 155, 236)</fill>
+					<neg>false</neg>
+				</rectangle>
+				<rectangle>
+					<x>0</x>
+					<y>40</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(179, 98, 164)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(179, 98, 164)</fill>
+					<neg>false</neg>
+				</rectangle>
+				<rectangle>
+					<x>0</x>
+					<y>40</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(238, 238, 238)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(69, 155, 236)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+		</assumptions>
+		<goal>
+			<rectangle>
+				<x>0</x>
+				<y>0</y>
+				<h>40</h>
+				<w>80</w>
+				<fill>rgb(69, 155, 236)</fill>
+				<neg>false</neg>
+			</rectangle>
+			<rectangle>
+				<x>0</x>
+				<y>40</y>
+				<h>40</h>
+				<w>40</w>
+				<fill>rgb(179, 98, 164)</fill>
+				<neg>false</neg>
+			</rectangle>
+			<rectangle>
+				<x>40</x>
+				<y>40</y>
+				<h>40</h>
+				<w>40</w>
+				<fill>rgb(238, 238, 238)</fill>
+				<neg>false</neg>
+			</rectangle>
+		</goal>
+	</level>
+	<level id="1">
+		<controls>
+			
+		</controls>
+		<assumptions>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(69, 155, 236)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>40</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(179, 98, 164)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+		</assumptions>
+		<goal>
+			<rectangle>
+				<x>40</x>
+				<y>0</y>
+				<h>40</h>
+				<w>40</w>
+				<fill>rgb(179, 98, 164)</fill>
+				<neg>false</neg>
+			</rectangle>
+			<rectangle>
+				<x>0</x>
+				<y>0</y>
+				<h>40</h>
+				<w>40</w>
+				<fill>rgb(69, 155, 236)</fill>
+				<neg>false</neg>
+			</rectangle>
+		</goal>
+	</level>
+	<level id="2">
+		<controls>
+			<control>imp_el</control>
+		</controls>
+		<assumptions>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(69, 155, 236)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(69, 155, 236)</fill>
+					<neg>false</neg>
+				</rectangle>
+				<rectangle>
+					<x>0</x>
+					<y>40</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(179, 98, 164)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+		</assumptions>
+		<goal>
+			<rectangle>
+				<x>40</x>
+				<y>0</y>
+				<h>40</h>
+				<w>40</w>
+				<fill>rgb(179, 98, 164)</fill>
+				<neg>false</neg>
+			</rectangle>
+		</goal>
+	</level>
+	<level id="3">
+		<controls>
+			<control>imp_el</control>
+			
+		</controls>
+		<assumptions>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(69, 155, 236)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(69, 155, 236)</fill>
+					<neg>false</neg>
+				</rectangle>
+				<rectangle>
+					<x>0</x>
+					<y>40</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(179, 98, 164)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+		</assumptions>
+		<goal>
+			<rectangle>
+				<x>0</x>
+				<y>0</y>
+				<h>40</h>
+				<w>40</w>
+				<fill>rgb(69, 155, 236)</fill>
+				<neg>false</neg>
+			</rectangle>
+			<rectangle>
+				<x>40</x>
+				<y>0</y>
+				<h>40</h>
+				<w>40</w>
+				<fill>rgb(179, 98, 164)</fill>
+				<neg>false</neg>
+			</rectangle>
+		</goal>
+	</level>
+	<level id="4">
+		<controls>
+			<control>imp_el</control>
+		</controls>
+		<assumptions>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(69, 155, 236)</fill>
+					<neg>false</neg>
+				</rectangle>
+				<rectangle>
+					<x>0</x>
+					<y>40</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(179, 98, 164)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(179, 98, 164)</fill>
+					<neg>false</neg>
+				</rectangle>
+				<rectangle>
+					<x>0</x>
+					<y>40</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(238, 238, 238)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(69, 155, 236)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+		</assumptions>
+		<goal>
+			<rectangle>
+				<x>0</x>
+				<y>0</y>
+				<h>40</h>
+				<w>40</w>
+				<fill>rgb(179, 98, 164)</fill>
+				<neg>false</neg>
+			</rectangle>
+			<rectangle>
+				<x>40</x>
+				<y>0</y>
+				<h>40</h>
+				<w>40</w>
+				<fill>rgb(238, 238, 238)</fill>
+				<neg>false</neg>
+			</rectangle>
+		</goal>
+	</level>
+	<level id="5">
+		<controls>
+			<control>imp_el</control>
+			
+<!-- 			<control>ret</control> -->
+		</controls>
+		<assumptions>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(69, 155, 236)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(69, 155, 236)</fill>
+					<neg>false</neg>
+				</rectangle>
+				<rectangle>
+					<x>0</x>
+					<y>40</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(179, 98, 164)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(69, 155, 236)</fill>
+					<neg>false</neg>
+				</rectangle>
+				<rectangle>
+					<x>40</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(179, 98, 164)</fill>
+					<neg>false</neg>
+				</rectangle>
+				<rectangle>
+					<x>0</x>
+					<y>40</y>
+					<h>40</h>
+					<w>80</w>
+					<fill>rgb(238, 238, 238)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+		</assumptions>
+		<goal>
+			<rectangle>
+				<x>0</x>
+				<y>0</y>
+				<h>40</h>
+				<w>80</w>
+				<fill>rgb(238, 238, 238)</fill>
+				<neg>FALSE</neg>
+			</rectangle>
+		</goal>
+	</level>
+	<level id="6">
+		<controls>
+			<control>flag_in</control>
+			<control>flag_end</control>
+		</controls>
+		<assumptions>
+		</assumptions>
+		<goal>
+			<rectangle>
+				<x>0</x>
+				<y>0</y>
+				<h>40</h>
+				<w>40</w>
+				<fill>rgb(179, 98, 164)</fill>
+				<neg>false</neg>
+			</rectangle>
+			<rectangle>
+				<x>0</x>
+				<y>40</y>
+				<h>40</h>
+				<w>40</w>
+				<fill>rgb(179, 98, 164)</fill>
+				<neg>false</neg>
+			</rectangle>
+		</goal>
+		<hyps>
+			<hyp>
+				<rectangle>
+					<x>0</x>
+					<y>40</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(179, 98, 164)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</hyp>
+		</hyps>
+	</level>
+	<level id="7">
+		<controls>
+			<control>flag_in</control>
+			<control>flag_end</control>
+		</controls>
+		<assumptions>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(69, 155, 236)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+		</assumptions>
+		<goal>
+			<rectangle>
+				<x>0</x>
+				<y>0</y>
+				<h>40</h>
+				<w>40</w>
+				<fill>rgb(179, 98, 164)</fill>
+				<neg>false</neg>
+			</rectangle>
+			<rectangle>
+				<x>0</x>
+				<y>40</y>
+				<h>40</h>
+				<w>40</w>
+				<fill>rgb(69, 155, 236)</fill>
+				<neg>false</neg>
+			</rectangle>
+		</goal>
+		<hyps>
+			<hyp>
+				<rectangle>
+					<x>0</x>
+					<y>40</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(179, 98, 164)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</hyp>
+		</hyps>
+	</level>
+	<level id="8">
+		<controls>
+			<control>flag_in</control>
+			<control>flag_end</control>
+			<control>imp_el</control>
+		</controls>
+		<assumptions>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(69, 155, 236)</fill>
+					<neg>false</neg>
+				</rectangle>
+				<rectangle>
+					<x>0</x>
+					<y>40</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(179, 98, 164)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(179, 98, 164)</fill>
+					<neg>false</neg>
+				</rectangle>
+				<rectangle>
+					<x>0</x>
+					<y>40</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(238, 238, 238)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+		</assumptions>
+		<goal>
+			<rectangle>
+				<x>0</x>
+				<y>40</y>
+				<h>40</h>
+				<w>40</w>
+				<fill>rgb(179, 98, 164)</fill>
+				<neg>false</neg>
+			</rectangle>
+			<rectangle>
+				<x>40</x>
+				<y>40</y>
+				<h>40</h>
+				<w>40</w>
+				<fill>rgb(238, 238, 238)</fill>
+				<neg>false</neg>
+			</rectangle>
+			<rectangle>
+				<x>0</x>
+				<y>0</y>
+				<h>40</h>
+				<w>80</w>
+				<fill>rgb(69, 155, 236)</fill>
+				<neg>false</neg>
+			</rectangle>
+		</goal>
+		<hyps>
+			<hyp>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(69, 155, 236)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</hyp>
+		</hyps>
+	</level>
+	<level id="9">
+		<controls>
+			<control>flag_in</control>
+			<control>flag_end</control>
+			<control>imp_el</control>
+		</controls>
+		<assumptions>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(69, 155, 236)</fill>
+					<neg>false</neg>
+				</rectangle>
+				<rectangle>
+					<x>0</x>
+					<y>40</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(179, 98, 164)</fill>
+					<neg>false</neg>
+				</rectangle>
+				<rectangle>
+					<x>0</x>
+					<y>80</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(238, 238, 238)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+		</assumptions>
+		<goal>
+			<rectangle>
+				<x>0</x>
+				<y>0</y>
+				<h>40</h>
+				<w>40</w>
+				<fill>rgb(179, 98, 164)</fill>
+				<neg>false</neg>
+			</rectangle>
+			<rectangle>
+				<x>0</x>
+				<y>40</y>
+				<h>40</h>
+				<w>40</w>
+				<fill>rgb(69, 155, 236)</fill>
+				<neg>false</neg>
+			</rectangle>
+			<rectangle>
+				<x>0</x>
+				<y>80</y>
+				<h>40</h>
+				<w>40</w>
+				<fill>rgb(238, 238, 238)</fill>
+				<neg>false</neg>
+			</rectangle>
+		</goal>
+		<hyps>
+			<hyp>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(69, 155, 236)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</hyp>
+			<hyp>
+				<rectangle>
+					<x>0</x>
+					<y>40</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(179, 98, 164)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</hyp>
+		</hyps>
+	</level>
+	<level id="10">
+		<controls>
+			<control>imp_el</control>
+			<control>flag_in</control>
+			<control>flag_end</control>
+			<control>ret</control>
+		</controls>
+		<assumptions>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(69, 155, 236)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>40</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(179, 98, 164)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+			<assumption>
+				<rectangle>
+					<x>0</x>
+					<y>0</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(69, 155, 236)</fill>
+					<neg>false</neg>
+				</rectangle>
+				<rectangle>
+					<x>0</x>
+					<y>40</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(179, 98, 164)</fill>
+					<neg>false</neg>
+				</rectangle>
+				<rectangle>
+					<x>0</x>
+					<y>80</y>
+					<h>40</h>
+					<w>40</w>
+					<fill>rgb(238, 238, 238)</fill>
+					<neg>false</neg>
+				</rectangle>
+			</assumption>
+		</assumptions>
+		<goal>
+			<rectangle>
+				<x>0</x>
+				<y>40</y>
+				<h>40</h>
+				<w>40</w>
+				<fill>rgb(69, 155, 236)</fill>
+				<neg>false</neg>
+			</rectangle>
+			<rectangle>
+				<x>0</x>
+				<y>00</y>
+				<h>40</h>
+				<w>40</w>
+				<fill>rgb(179, 98, 164)</fill>
+				<neg>false</neg>
+			</rectangle>
+			<rectangle>
+				<x>0</x>
+				<y>80</y>
+				<h>40</h>
+				<w>40</w>
+				<fill>rgb(238, 238, 238)</fill>
+				<neg>false</neg>
+			</rectangle>
+		</goal>
+	</level>
+</levels>
