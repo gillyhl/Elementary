@@ -1235,78 +1235,17 @@ function clear_level() {
 	$(".hyp .button").remove();
 }
 
-function load_level(level_id) {
-	var div_string;
-	clear_level();
-	$("#level_start_template").show();
-	$("#loading").fadeIn('slow');
-	
-	setTimeout(function() { $.ajax({
-			type: "GET",
-			url: "../levels.xml",
-			dataType: "xml",
-			success: function(xml) {
-				var current_level = $(xml).find("level[id=" + level_id + "]");
-				var x, y, w, h, neg, fill;
-				var rects = [];
-
-				$(current_level).find("controls").find("control").each(function() {
-					append_control($(this).text());
-				});
-			
-				$(current_level).find("assumptions").find("assumption").each(function() {
-					div_string = shape_to_div_converter(new Shape (parse_rectangles(this)));
-					add_to_button_holder(div_string);
-				});
-				
-				$(current_level).find("hyps").find("hyp").each(function(i) {
-					console.log("GET HYPE");
-					div_string = shape_to_div_converter_full(new Shape (parse_rectangles(this)));
-					$(".hyp:eq(" + i + ")").append(div_string);
-				});
-				
-				$(".hyp .button").each(function() {
-					$(this).css({"margin-left": -$(this).width() / 2 +"px"});
-					$(this).css({"margin-top": -$(this).height() / 2 +"px"});
-					$(this).find(".sub_button").each(function () {
-						$(this).css({"border" : "1px solid #eee"});
-					});
-				});
-			
-				goal_shape = new Shape (parse_rectangles($(current_level).find("goal")));
-			
-				if (goal_shape != null) {
-					translate_shape(goal_shape, -goal_shape.left.x, -goal_shape.top.y);
-					translate_shape(goal_shape, 405 - goal_shape.width / 2, 310 - goal_shape.height / 2);
-				}
-			
-				add_event_listeners();
-			
-				$("#level_id").text(level_id);
-				$("#loading").fadeOut('slow', function () {
-					$("#level_start").fadeIn("slow");
-				});
-				
-				populate_shape_prev();
-			}
-		});
-	}, 1000);
-}
-
 // function load_level(level_id) {
 // 	var div_string;
 // 	clear_level();
-// 	$("#start_btn").click(function() {
-// 		add_event_listeners();
-// 		$("#level_start_template").fadeOut('slow');
-// 		$("#level_start").fadeOut('slow', function() {
-// 			timer_running = true;
-// 		});
-// 	});
 // 	$("#level_start_template").show();
 // 	$("#loading").fadeIn('slow');
-// 	setTimeout(function() { 
-// 				var xml = $.parseXML(xml_string);
+// 	
+// 	setTimeout(function() { $.ajax({
+// 			type: "GET",
+// 			url: "../levels.xml",
+// 			dataType: "xml",
+// 			success: function(xml) {
 // 				var current_level = $(xml).find("level[id=" + level_id + "]");
 // 				var x, y, w, h, neg, fill;
 // 				var rects = [];
@@ -1319,6 +1258,20 @@ function load_level(level_id) {
 // 					div_string = shape_to_div_converter(new Shape (parse_rectangles(this)));
 // 					add_to_button_holder(div_string);
 // 				});
+// 				
+// 				$(current_level).find("hyps").find("hyp").each(function(i) {
+// 					console.log("GET HYPE");
+// 					div_string = shape_to_div_converter_full(new Shape (parse_rectangles(this)));
+// 					$(".hyp:eq(" + i + ")").append(div_string);
+// 				});
+// 				
+// 				$(".hyp .button").each(function() {
+// 					$(this).css({"margin-left": -$(this).width() / 2 +"px"});
+// 					$(this).css({"margin-top": -$(this).height() / 2 +"px"});
+// 					$(this).find(".sub_button").each(function () {
+// 						$(this).css({"border" : "1px solid #eee"});
+// 					});
+// 				});
 // 			
 // 				goal_shape = new Shape (parse_rectangles($(current_level).find("goal")));
 // 			
@@ -1327,12 +1280,59 @@ function load_level(level_id) {
 // 					translate_shape(goal_shape, 405 - goal_shape.width / 2, 310 - goal_shape.height / 2);
 // 				}
 // 			
+// 				add_event_listeners();
+// 			
 // 				$("#level_id").text(level_id);
 // 				$("#loading").fadeOut('slow', function () {
 // 					$("#level_start").fadeIn("slow");
 // 				});
 // 				
 // 				populate_shape_prev();
-// 		
+// 			}
+// 		});
 // 	}, 1000);
 // }
+
+function load_level(level_id) {
+	var div_string;
+	clear_level();
+	$("#start_btn").click(function() {
+		add_event_listeners();
+		$("#level_start_template").fadeOut('slow');
+		$("#level_start").fadeOut('slow', function() {
+			timer_running = true;
+		});
+	});
+	$("#level_start_template").show();
+	$("#loading").fadeIn('slow');
+	setTimeout(function() { 
+				var xml = $.parseXML(xml_string);
+				var current_level = $(xml).find("level[id=" + level_id + "]");
+				var x, y, w, h, neg, fill;
+				var rects = [];
+
+				$(current_level).find("controls").find("control").each(function() {
+					append_control($(this).text());
+				});
+			
+				$(current_level).find("assumptions").find("assumption").each(function() {
+					div_string = shape_to_div_converter(new Shape (parse_rectangles(this)));
+					add_to_button_holder(div_string);
+				});
+			
+				goal_shape = new Shape (parse_rectangles($(current_level).find("goal")));
+			
+				if (goal_shape != null) {
+					translate_shape(goal_shape, -goal_shape.left.x, -goal_shape.top.y);
+					translate_shape(goal_shape, 405 - goal_shape.width / 2, 310 - goal_shape.height / 2);
+				}
+			
+				$("#level_id").text(level_id);
+				$("#loading").fadeOut('slow', function () {
+					$("#level_start").fadeIn("slow");
+				});
+				
+				populate_shape_prev();
+		
+	}, 1000);
+}
