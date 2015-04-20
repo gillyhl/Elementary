@@ -1,0 +1,46 @@
+#level_start_template {
+	background-color: #ddd;
+	background-image: url('../img/aristotle_small.png');
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+
+#level_start {
+	font-family: 'nexa';
+	color: #333;
+}
+
+#level_start p {
+	line-height: 200px;
+	font-size: 4em;
+	text-align: center;
+	margin: 0;
+}
+
+#start_btn {
+	background: #3498db;
+	background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+	background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+	background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+	background-image: -o-linear-gradient(top, #3498db, #2980b9);
+	background-image: linear-gradient(to bottom, #3498db, #2980b9);
+/* 	font-family: 'nexa-hand'; */
+	color: #ffffff;
+	font-size: 20px;
+	padding: 10px 20px 10px 20px;
+	border: solid #1f628d 3px;
+	text-decoration: none;
+	cursor: pointer;
+	width: 300px;
+	position: relative;
+	left: 50%;
+	margin-left: -150px;
+	text-align: center;
+	font-size: 2em;
+  
+}
+
+#start_btn:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}

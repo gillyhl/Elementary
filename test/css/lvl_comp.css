@@ -1,0 +1,52 @@
+#level_complete {
+	text-align: center;
+	background: #bbb;
+	color: #333;
+	background-image: url('../img/aristotle_party.png');
+	background-repeat: no-repeat;
+	background-position: left bottom;
+}
+
+#level_complete_header {
+	font-family: 'nexa', sans-serif;
+	font-size: 70px;
+	line-height: 100px;
+}
+
+#bottom_level_controls {
+	position: absolute;
+	bottom: 0;
+	height: 150px;
+	width: 100%;
+}
+
+#bottom_level_controls div {
+	font-family: 'nexa-hand', sans-serif;
+	line-height: 150px;
+	display: inline-block;
+	width: 267px;
+	font-size: 70px;
+	-webkit-transition: transform 200ms linear 0s;
+	transition: transform 200ms linear 0s;
+	cursor: pointer;
+}
+
+#bottom_level_controls div:hover {
+	transform:scale(1.1);
+}
+
+#level_complete img {
+	position: absolute;
+}
+
+#fwrk_1 {
+	width: 259px;
+	right: 135px;
+	bottom: 50px;
+}
+
+#fwrk_2 {
+	width: 180px;
+	right: 344px;
+	bottom: 127px;
+}

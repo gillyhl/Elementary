@@ -1,0 +1,179 @@
+.viewport_holder {
+	width: 902px;
+	height: 500px;
+	position: relative;
+	left: 50%;
+	margin-left: -451px;
+	top: 50%;
+	margin-top: -250px;
+}
+
+#education_viewport {
+	width: 100%;
+	height: 100%;
+	border-left: 1px solid #aaa;
+	border-right: 1px solid #aaa;
+
+/* 
+ 	-webkit-border-image: url('../img/curly_brace_l.png') 56 56 round; 
+    -o-border-image: url('../img/curly_brace_l.png') 56 56 round; 
+    border-image: url('../img/curly_brace_l.png') 56 56 round;
+ */
+	position: relative;
+	overflow: hidden;
+}
+
+#education_holder {
+	height: 100%;
+	position: relative;
+	left: 0;
+}
+
+.education_content {
+	position: relative;
+	display: inline-block;
+	padding: 20px;
+	width: 902px;
+	height: 100%;
+	vertical-align: top;
+}
+
+.arrow_holder {
+	width: 70px;
+	height: 70px;
+	background: #ddd;
+	position: absolute;
+	top: 215px;
+	color: #111;
+	text-align: center;
+	line-height: 70px;
+	font-size: 4em;
+	font-weight: bolder;
+	opacity: 0.7;
+	cursor: pointer;
+}
+
+.arrow_holder:hover {
+	opacity: 1;
+}
+
+#edu_left_arrow {
+	left: -70px;
+}
+
+#edu_right_arrow {
+	right: -70px;
+}
+
+.edu_button_holder {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100px;
+}
+
+.edu_button {
+	font-family: 'nexa', sans-serif;
+	line-height: 100px;
+	font-size: 50px;
+	text-align: center;
+	margin: 0 20px;
+	cursor: pointer;
+	/* vertical-align: top; */
+	/* bottom: 0; */
+	position: absolute;
+	bottom: 0;
+	-webkit-transition: transform 200ms linear 0s;
+	transition: transform 200ms linear 0s;
+	color: rgb(238, 238, 238);
+}
+
+.edu_button:hover {
+	transform:scale(1.1);
+}
+
+.edu_right {
+	right: 0;
+}
+
+.edu_left {
+	left: 0;
+}
+
+#education .demo_block {
+	width: 40px; 
+	height: 40px; 
+	background: rgb(179, 98, 164); 
+	margin-top: 10px; 
+	margin-bottom: 10px; 
+	position: relative; 
+	left: 50%; 
+	margin-left: -20px;
+	border: 1px solid #ddd;
+}
+
+#beginning_content {
+	background-image: url('../img/chr_log.png');
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+
+#education .demo_block_2 {
+	width: 80px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	position: relative;
+	left: 50%;
+	margin-left: -40px;
+}
+
+#education .demo_block_3 {
+	width: 80px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+#education .demo_small_block {
+	width: 40px;
+	height: 40px;
+	border: 1px solid #ddd;
+	border-collapse: collapse;
+}
+
+#education .demo_block_4 {
+	width: 160px;
+	position: relative;
+	left: 50%;
+	margin-left: -80px;
+}
+#education .demo_block_4 .demo_small_block {
+	display: inline-block;
+}
+
+.float_left {
+	float: left;
+}
+
+.float_right {
+	float: right;
+}
+
+.blue_block {
+	color: rgb(69, 155, 236);
+}
+
+.pink_block {
+	color: rgb(179, 98, 164);
+}
+
+#education_holder #smaller_p {
+	font-size = 0.8em;
+}
+
+#js {
+	background-image: url('../img/js.png');
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}

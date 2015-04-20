@@ -1,0 +1,114 @@
+#game_rules_viewport {
+	width: 100%;
+	height: 100%;
+	border-left: 1px solid #aaa;
+	border-right: 1px solid #aaa;
+
+/* 
+ 	-webkit-border-image: url('../img/curly_brace_l.png') 56 56 round; 
+    -o-border-image: url('../img/curly_brace_l.png') 56 56 round; 
+    border-image: url('../img/curly_brace_l.png') 56 56 round;
+ */
+	position: relative;
+	overflow: hidden;
+}
+
+#game_rules_holder {
+	height: 100%;
+	position: relative;
+	left: 0;
+}
+
+.game_rules_content {
+	position: relative;
+	display: inline-block;
+	padding: 20px;
+	width: 902px;
+	height: 100%;
+	vertical-align: top;
+}
+
+.arrow_holder {
+	width: 70px;
+	height: 70px;
+	background: #ddd;
+	position: absolute;
+	top: 215px;
+	color: #111;
+	text-align: center;
+	line-height: 70px;
+	font-size: 4em;
+	font-weight: bolder;
+	opacity: 0.7;
+	cursor: pointer;
+}
+
+.arrow_holder:hover {
+	opacity: 1;
+}
+
+#game_left_arrow {
+	left: -70px;
+}
+
+#game_right_arrow {
+	right: -70px;
+}
+
+#lost_game {
+	font-family: 'nexa', sans-serif;
+	font-size: 0.1em;
+}
+
+#sound_of_music {
+	background-image: url('../img/sound_of_music.png');
+	background-repeat: no-repeat;
+	background-position: right bottom;
+}
+
+.controls_img {
+	width: 650px;
+	position: relative;
+	left: 50%;
+	margin-left: -325px;
+}
+
+#p_holder_1 {
+	position: relative;
+	margin-top: 18px;
+}
+
+.tut_button_holder {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100px;
+}
+
+.tut_button {
+	font-family: 'nexa', sans-serif;
+	line-height: 100px;
+	font-size: 50px;
+	text-align: center;
+	margin: 0 20px;
+	cursor: pointer;
+	/* vertical-align: top; */
+	/* bottom: 0; */
+	position: absolute;
+	bottom: 0;
+	-webkit-transition: transform 200ms linear 0s;
+	transition: transform 200ms linear 0s;
+}
+
+.tut_button:hover {
+	transform:scale(1.1);
+}
+
+.tut_right {
+	right: 0;
+}
+
+.tut_left {
+	left: 0;
+}

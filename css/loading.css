@@ -1,0 +1,31 @@
+#loading {
+/* 
+	background-color: #ddd;
+	background-image: url('../img/aristotle_small.png');
+	background-repeat: no-repeat;
+	background-position: left bottom;
+ */
+}
+
+#load_gif {
+	display: block;
+	position: relative;
+	left: 50%;
+	margin-left: -90px;
+}
+
+#load_header {
+	font-family: 'nexa', sans-serif;
+	color: #333;
+	text-align: center;
+	height: 200px;
+	line-height: 200px;
+	font-size: 4em;
+}
+
+#loading p {
+	font-size: 2em;
+	color: #333;
+	text-align: center;
+	font-family: 'nexa-hand';
+}

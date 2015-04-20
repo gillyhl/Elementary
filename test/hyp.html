@@ -1,0 +1,108 @@
+<html>
+<head>
+	<meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+	<link rel="icon" type="image/png" href="flavicon.png" />
+	<title>Elementary</title>
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,400,900' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/root.css" />
+	<link rel="stylesheet" href="css/lvl_comp.css" />
+	<link rel="stylesheet" href="css/lvl_start.css" />
+	<link rel="stylesheet" href="css/modus.css" />
+	<link rel="stylesheet" href="css/edu.css" />
+	<link rel="stylesheet" href="css/game_rules.css" />
+	<link rel="stylesheet" href="css/loading.css" />
+	<link rel="stylesheet" href="css/hyp.css" />
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/init_vars.js"></script>
+	<script>
+		function shape_to_div_converter(shape) {
+			var div_string = '<div class="selector button" draggable="true" style="margin-right: 8px;"> ';
+			var rect, rect_w, rect_h, rect_x, rect_y;
+			var width_ratio = 40 / shape.width;
+		// 	div_string += 'data-wd="' + width_ratio + '" ';
+			var height_ratio = 40 / shape.height;
+		// 	div_string += 'data-ht="' + height_ratio + '">';
+			var left_pos = shape.left.x; // Left point of shape
+			var top_pos = shape.top.y; // Top point of shape
+	
+			for (i = 0; i < shape.rectangles.length; i++) {
+				rect = shape.rectangles[i];
+				rect_w = rect.w;
+				rect_h = rect.h;
+				rect_x = (rect.x - left_pos);
+				rect_y = (rect.y - top_pos);
+		
+				if(rect.neg)
+					div_string += '<div class="sub_button neg" style="';
+				else {
+					div_string += '<div class="sub_button" style="';		
+				}
+		
+				div_string += 'background-color: ' + rect.fill + '; ';
+				div_string += 'width: ' + rect_w + '; ';
+				div_string += 'height: ' + rect_h + '; ';
+				div_string += 'left: ' + rect_x + '; ';
+				div_string += 'top: ' + rect_y + ';"';
+				div_string += 'data-t="' + (rect.y - top_pos) + '"';
+				div_string += 'data-l="' + (rect.x - left_pos)  + '"';
+				div_string += 'data-w="' + rect.w + '"';
+				div_string += 'data-h="' + rect.h + '"></div>';
+		
+			}
+	
+			div_string += "</div>";
+			return div_string;
+		}
+	</script>
+	<script>
+		$(document).ready(function() {
+			$(".hyp").append('<div class="selector button" draggable="true" style="margin-right: 8px; height: 40px; width: 80px;"> <div class="sub_button" style="background-color: rgb(69, 155, 236); width: 40; height: 40; left: 0; top: 0;"data-t="0"data-l="0"data-w="40"data-h="40"></div><div class="sub_button" style="background-color: rgb(179, 98, 164); width: 40; height: 40; left: 40; top: 0;"data-t="0"data-l="40"data-w="40"data-h="40"></div></div>');
+			$(".hyp .button").each(function() {
+				$(this).css({"margin-left": -$(this).width() / 2 +"px"});
+				$(this).css({"margin-top": -$(this).height() / 2 +"px"});
+				$(this).find(".sub_button").each(function () {
+					$(this).css({"border" : "1px solid #eee"});
+				});
+			});
+		});
+	</script>
+</head>
+
+<body>
+<div id="popup_overlay">
+	<div id="popup_content">
+		<h2 class="nexa">Help</h2>
+	</div>
+</div>
+<div id="hyp" class="level_overlay">
+	<h2>PICK HYPOTHESIS</h2>
+	<div class="hyp_holder">
+		<div class="hyp">
+			
+		</div><!--
+		--><div class="hyp">
+			
+		</div><!--
+		--><div class="hyp">
+			
+		</div><!--
+		--><div class="hyp">
+			
+		</div><!--
+		--><div class="hyp">
+			
+		</div><!--
+		--><div class="hyp">
+			
+		</div><!--
+		--><div class="hyp">
+			
+		</div><!--
+		--><div class="hyp">
+			
+		</div>
+	</div>
+	<div id="back">BACK</div>
+</div>
+</body>
+</html>
