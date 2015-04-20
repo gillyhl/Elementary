@@ -11,7 +11,6 @@
 		<link rel="stylesheet" href="css/edu.css" />
 		<link rel="stylesheet" href="css/game_rules.css" />
 		<link rel="stylesheet" href="css/loading.css" />
-		<link rel="stylesheet" href="css/hyp.css" />
 		<script src="js/jquery-1.11.1.min.js"></script>
 		<script src="js/jquery.pulse.js"></script>
 		<script src="js/jquery.panelSnap.js"></script>
@@ -23,7 +22,6 @@
  		<script src="js/draw.js"></script>
  		<script src="js/edu.js"></script>
  		<script src="js/game_rules.js"></script>
- 		<script src="js/hyp.js"></script>
 <!-- 
 		<script src="init_panel_snap.js"></script>
  -->
@@ -292,6 +290,7 @@
 		<section id="game">
 			<div id="game_title" class="zantroke">ELEMENTARY</div>
 			<div class="game_holder unselectable">
+				<div id="timer">00:00</div>
 				<div id="all_btn_holder">
 					<div class="button_holder">
 						<!-- 
@@ -353,30 +352,11 @@
 					</div>
 					<div id="pointer"><img src="img/pointing-arrow.png" id="p_ar" style="opacity: 0"/>THIS IS HOW TO DO IT!</div>
 					<div id="gotcha">
-						<span>CLOSE</span>
+						<span>GOTCHA!</span>
 					</div>
 					<div id="explain">
 						TOPS OF BLOCKS MUST BE THE SAME
 					</div>
-				</div>
-				<div id="hyp" class="level_overlay">
-					<h2>PICK HYPOTHESIS</h2>
-					<div class="hyp_holder">
-						<div class="hyp">
-			
-						</div><!--
-						--><div class="hyp">
-			
-						</div><!--
-						--><div class="hyp">
-			
-						</div><!--
-						--><div class="hyp">
-			
-						</div>
-			
-					</div>
-					<div id="hyp_back">BACK</div>
 				</div>
 <!-- 
 				<div id="goal_area">
@@ -388,3 +368,5 @@
 		</section>
 	</body>
 </html>
+
+<!-- BOB LIKES APPLES - GOOD ON YOU BOB-->

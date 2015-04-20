@@ -9,7 +9,7 @@ function init() {
 	HEIGHT = canvas.height;
 	WIDTH = canvas.width;   
 	
-// 	timer = setInterval(increment_timer, 1000);
+	timer = setInterval(increment_timer, 1000);
 	
 	load_level(current_level_game);
 }
@@ -196,7 +196,7 @@ function handleDrop(e) {
 	this.classList.remove('over');  // this / e.target is previous target element.
 	clear_eligible_shapes();
 	e.preventDefault();
-	return false;   
+	return false;  
 }
 
 function set_button_ids() {
@@ -354,7 +354,8 @@ function connect_to_right(shape, selected_shape) {
 // 		else
 			shape.rectangles[shape.rectangles.length - 1].h = new_h;
 	
-	}    	
+	}
+    	
     refresh_shape_data(shape);
     shapes.splice(shapes.indexOf(selected_shape),1);
 
@@ -370,8 +371,8 @@ function connect_to_top(shape, selected_shape) {
     var delta_y = (shape.top.y - selected_shape.height) - selected_shape.top.y;
 	var ratio = shape.width / selected_shape.width;
 	
-// 	add_to_button_holder(shape_to_div_converter(shape));
-// 	add_to_button_holder(shape_to_div_converter(selected_shape));
+	add_to_button_holder(shape_to_div_converter(shape));
+	add_to_button_holder(shape_to_div_converter(selected_shape));
 	for (i = 0; i < selected_shape.rectangles.length; i++) {
 		var rect = selected_shape.rectangles[i];
 		var new_x, new_y, new_w;
@@ -389,7 +390,7 @@ function connect_to_top(shape, selected_shape) {
 // 		else
 			shape.rectangles[shape.rectangles.length - 1].w = new_w;
 	}
-    console.log(shape);
+    	
     refresh_shape_data(shape);
     shapes.splice(shapes.indexOf(selected_shape),1);
 
@@ -404,9 +405,9 @@ function connect_to_bottom(shape, selected_shape) {
     var delta_x = shape.left.x - selected_shape.left.x;
     var delta_y = shape.top.y - selected_shape.top.y + shape.height;
 	var ratio = shape.width / selected_shape.width;
-
-// 	add_to_button_holder(shape_to_div_converter(shape));
-// 	add_to_button_holder(shape_to_div_converter(selected_shape));
+	
+	add_to_button_holder(shape_to_div_converter(shape));
+	add_to_button_holder(shape_to_div_converter(selected_shape));
 	for (i = 0; i < selected_shape.rectangles.length; i++) {
 		var rect = selected_shape.rectangles[i];
 		var new_x, new_y, new_w;
@@ -423,7 +424,7 @@ function connect_to_bottom(shape, selected_shape) {
 // 		else
 			shape.rectangles[shape.rectangles.length - 1].w = new_w;
 	}
-    console.log(shape);    	
+    	
     refresh_shape_data(shape);
     shapes.splice(shapes.indexOf(selected_shape),1);
 
@@ -455,18 +456,45 @@ function insert_shape_to_canvas(el) {
 	}
 }
 
+// function introduce_con() {
+// 	int_con = true;
+// 	document.addEventListener('mousemove', introduce_con_hover);
+// 	canvas.addEventListener('mousedown', introduce_con_down);
+// }
+// 
+// function introduce_con_hover(e) {
+// 	getMouse(e);
+// 	var shape, rect;
+// 	clear_eligible_rects();
+// 	for(i = 0; i < shapes.length; i++) {
+// 		shape = shapes[i];
+// 		for(j = 0; j < shape.rectangles.length; j++) {
+// 			rect = shape.rectangles[j];
+// 			if(mouseX > rect.x && mouseX < rect.x + rect.w && mouseY > rect.y && 
+// 				mouseY < rect.y + rect.h) {
+// 				rect.is_eligible = true;
+// 			}
+// 		}
+// 	}
+// }
+// 
+// function introduce_con_down(e) {
+// 	clear_eligible_rects();
+// 	document.removeEventListener('mousemove', introduce_con_hover);
+// 	canvas.removeEventListener('mousedown', introduce_con_down);
+// 	document.removeEventListener('mousemove', mouseMove);
+// 	int_con = false;
+// }
+
 function undo() {
 	shapes = [];
-	hyp_shapes = [];
 	var status, prev_status;
-	var prev_shape, prev_hyp;
+	var prev_shape;
 	remove_buttons();
 	if (shapes_prev.length == 0) {
 		return;
 	}
-	
 	prev_shape = shapes_prev.pop();
-	prev_hyp = hyp_shapes_prev.pop();
 	if (prev_block_status.length == 0) {
 		return;
 	}
@@ -501,30 +529,6 @@ function undo() {
 		shapes.push(new Shape(rectangles));
 		shapes[shapes.length - 1].opacity = old_opacity;
 	}
-	
-	for (i = 0; i < prev_hyp.length; i++) {
-		old_shape = prev_hyp[i];
-		old_opacity = prev_hyp[i].opacity
-		rectangles = [];
-		for (j = 0; j < old_shape.rectangles.length; j++) {
-			old_rect = old_shape.rectangles[j];
-			x = old_rect.x;
-			y = old_rect.y;
-			w = old_rect.w;
-			h = old_rect.h;
-			fill = old_rect.fill;
-			neg = old_rect.neg;
-			connected = old_rect.connected;
-		
-			new_rect = new Rectangle(x,y,w,h,fill,neg);
-			new_rect.connected = old_rect.connected;
-		
-			rectangles.push(new_rect);
-		}
-		
-		hyp_shapes.push(new Shape(rectangles));
-		hyp_shapes[hyp_shapes.length - 1].opacity = old_opacity;
-	}
 }
 
 function restart() {
@@ -532,9 +536,7 @@ function restart() {
 	if (prev_block_status.length == 0) {
 		return;
 	}
-	remove_buttons();
 	shapes = [];
-	hyp_shapes = [];
 	status = prev_block_status[0];
 	for (i = 0; i < status.length; i++) {
 		$(".button_holder").append(status[i]);
@@ -554,7 +556,7 @@ function populate_shape_prev() {
 	var status_push = [];
 	var status;
 	
-	$(".button_holder .button").each(function() {
+	$(".button").each(function() {
 		status_push.push($(this));
 	});
 	
@@ -587,34 +589,6 @@ function populate_shape_prev() {
 	}
 	
 	shapes_prev.push(prev_push);
-	prev_push = [];
-	
-	for (i = 0; i < hyp_shapes.length; i++) {
-		rectangles = [];
-		old_shape = hyp_shapes[i];
-		old_opacity = hyp_shapes[i].opacity;
-		for (j = 0; j < old_shape.rectangles.length; j++) {
-			old_rect = old_shape.rectangles[j];
-			x = old_rect.x;
-			y = old_rect.y;
-			w = old_rect.w;
-			h = old_rect.h;
-			fill = old_rect.fill;
-			neg = old_rect.neg;
-			connected = old_rect.connected;
-		
-			new_rect = new Rectangle(x,y,w,h,fill,neg);
-			new_rect.connected = old_rect.connected;
-		
-			rectangles.push(new_rect);
-		}
-	
-		prev_push.push(new Shape(rectangles));
-		prev_push[prev_push.length - 1].opacity = old_opacity;
-	}
-	
-	hyp_shapes_prev.push(prev_push);
-	
 }
 
 /*
@@ -671,13 +645,8 @@ function translate_shape(shape, delta_x, delta_y) {
 
 function clear_modus() {
 	var shape;
-	for (i = 0; i < (shapes.length + hyp_shapes.length); i++) {
-		if (i < shapes.length)
-			shape = shapes[i];
-		
-		else 
-			shape = hyp_shapes[i - shapes.length];
-		
+	for (i = 0; i < shapes.length; i++) {
+		shape = shapes[i];
 		shape.modus_selected = false;
 	}
 	
@@ -723,7 +692,7 @@ function common_rectangles(shape_1, shape_2) {
 }
 /**
  * Takes shape_1 and shape_2, if shape_2 contains shape_1 on top, then create a new shape
- * with just the bottom difference of shape_2. shape_2 is the bigger shape.
+ * with just the bottom difference of shape_2.
  */
 function check_modus_shapes(shape_1, shape_2) {
 	var rect_1, rect_2, equal_shape, shape_2_copy, new_shape;
@@ -755,7 +724,7 @@ function check_modus_shapes(shape_1, shape_2) {
 			for (j = 0; j < shape_2_copy.length; j++) {
 				rect_2 = shape_2_copy[j];
 				if (rect_2 != null) {
-					if((rectangle_eq_check(rect_1, rect_2))) { 
+					if((rectangle_eq_check(rect_1, rect_2))) { //ERROR STARTS HERE
 						shape_2_copy[j] = null;
 						break;
 					}
@@ -775,7 +744,6 @@ function check_modus_shapes(shape_1, shape_2) {
 // 		shapes.push(new_shape);
 		add_to_button_holder(shape_to_div_converter(new_shape));
 		populate_shape_prev();
-		clear_modus();
 	}
 }
 
@@ -807,13 +775,6 @@ function clone_rect(rect_original) {
 	rect.neg = rect_original.neg;
 	
 	return rect;
-}
-
-function clone_shape(shape_original) {
-	var rects = [];
-	for (i = 0; i < shape_original.rectangles.length; i++) 
-		rects.push(clone_rect(shape_original.rectangles[i]));
-	return (new Shape(rects));
 }
 
 function clone_rect_array(rect_arr_original) {
@@ -902,28 +863,6 @@ function shape_to_div_converter_full(shape) {
 	return div_string;
 }
 
-function div_full_to_div_hyp_converter(button) {
-	var div_string = '<div class="selector button hyp_button" draggable="true" style="margin-right: 8px;">';
-	var width_ratio = 40 / parseInt($(button).css("width"));
-	var height_ratio = 40 / parseInt($(button).css("height"));
-	$(button).find(".sub_button").each(function() {
-		div_string += '<div class="sub_button" style="';
-		
-		div_string += 'background-color: ' + $(this).css("background-color") + '; ';
-		div_string += 'width: ' + (parseInt($(this).css("width")) * width_ratio) + "px;";
-		div_string += 'height: ' + (parseInt($(this).css("height")) * height_ratio) + "px;";
-		div_string += 'left: ' + (parseInt($(this).css("left")) * width_ratio) + "px;";
-		div_string += 'top: ' + (parseInt($(this).css("top")) * height_ratio) + "px;" + '"';
-		div_string += 'data-t="' + $(this).data("t") + '"';
-		div_string += 'data-l="' + $(this).data("l")  + '"';
-		div_string += 'data-w="' + $(this).data("w") + '"';
-		div_string += 'data-h="' + $(this).data("h") + '"></div>';
-	});
-	div_string += '</div>';
-	
-	return div_string;
-}
-
 function add_to_button_holder(div_string) {
 	$(".button_holder").append(div_string);
 	set_button_ids();
@@ -945,42 +884,22 @@ function div_to_shape_converter(button_id) {
 		rects_array.push(new Rectangle(x, y, w, h, fill, neg));
 	});
 	
-	if($(button_id).hasClass("hyp_button")) {
-		$(button_id).remove();
-		var shape;
-		
-		for (i = 0; i < shapes.length; i++) {
-			shape = shapes[i];
-			shape.opacity *= 0.5;
-		}
-		
-		for (i = 0; i < hyp_shapes.length; i++) {
-			shape = hyp_shapes[i];
-			shape.opacity *= 0.5;
-		}
-		
-		hyp_shapes.push(new Shape(rects_array));
-		translate_shape(hyp_shapes[hyp_shapes.length - 1], mouseX - (block_size / 2), 
+	shapes.push(new Shape(rects_array));
+	translate_shape(shapes[shapes.length - 1], mouseX - (block_size / 2), 
 		mouseY - (block_size / 2));
+	
+	proximity_check(shapes[shapes.length - 1]);
+	
+	if (closest_prox_global != null) {
+		closest_prox_global.fun_call(closest_prox_global.shape, shapes[shapes.length - 1]);
+		closest_prox_global = null;
 	}
 	
-	else {
-		$(button_id).remove();
-	
-		shapes.push(new Shape(rects_array));
-		translate_shape(shapes[shapes.length - 1], mouseX - (block_size / 2), 
-			mouseY - (block_size / 2));
-	
-		proximity_check(shapes[shapes.length - 1]);
-	
-		if (closest_prox_global != null) {
-			closest_prox_global.fun_call(closest_prox_global.shape, shapes[shapes.length - 1]);
-			closest_prox_global = null;
-		}
-	
-		if (mouseY > (360 -	goal_area_height))
-			goal_check(shapes[shapes.length - 1]);
-	}		
+	if (mouseY > (360 -	goal_area_height))
+		goal_check(shapes[shapes.length - 1]);
+		
+	$(button_id).remove();
+		
 }
 
 function append_control(id) {
@@ -1049,21 +968,15 @@ function clear_modes() {
 }
 
 function add_event_listeners() {
-	$("#start_btn").off().click(function() {
+	$("#start_btn").click(function() {
 		$("#level_start_template").fadeOut('slow');
 		$("#level_start").fadeOut('slow', function() {
 			timer_running = true;
 		});
 	});
 	
-	$(".hyp .button").off().click(function () {
-		var div_string = div_full_to_div_hyp_converter($(this));
-		add_to_button_holder(div_string);
-		$("#hyp").fadeOut('slow');
-		add_event_listeners();
-	});
-	
-	$("#flag_end").off().click(function () {
+	$("#flag_end").click(function () {
+		console.log("BOOOO");
 		if($("#imp_in").hasClass("selected")) {
 			$("#imp_in").toggleClass("selected");
 			vertical_connect = !vertical_connect;
@@ -1083,28 +996,58 @@ function add_event_listeners() {
 			$("#flag_in").toggleClass("selected");
 			flag_introduction = !flag_introduction;
 		}
+				
+		if (flag_level == 1) {
+			alert("GREEDY");
+			return;
+		}
 		
-		if (hyp_shapes.length != 0) {
-			$(this).toggleClass("selected");
+		$(this).toggleClass("selected");
+		flag_end = !flag_end;
+		
+		clear_modus();
+		clear_return();
+		if(flag_end) {
+			canvas.addEventListener("mousemove", mouseMoveReturn);
+		}
+	});
+	
+	$("#flag_in").click(function () {
+		if($("#imp_in").hasClass("selected")) {
+			$("#imp_in").toggleClass("selected");
+			vertical_connect = !vertical_connect;
+		}
+	
+		if($("#imp_el").hasClass("selected")) {
+			$("#imp_el").toggleClass("selected");
+			modus_ponens = !modus_ponens;
+		}
+	
+		if($("#ret").hasClass("selected")) {
+			$("#ret").toggleClass("selected");
+			return_bar = !return_bar;
+		}
+	
+		if($("#flag_end").hasClass("selected")) {
+			$("#flag_end").toggleClass("selected");
 			flag_end = !flag_end;
-		
-			clear_modus();
-			clear_return();
-			if(flag_end) {
-				canvas.addEventListener("mousemove", mouseMoveReturn);
-			}
 		}
 		
-		else {
-			alert("HYPOTHESISE HYPOTHESISE");
+		if (flag_level == 3) {
+			alert("GREEDY");
+			return;
 		}
+		
+		$(this).toggleClass("selected");
+		flag_introduction = !flag_introduction;
+
+		clear_modus();
+		clear_return();
+		if(flag_introduction)
+			canvas.addEventListener("mousemove", mouseMoveReturn);
 	});
 	
-	$("#flag_in").off().click(function () {
-		$("#hyp").fadeIn('slow'); 
-	});
-	
-	$("#ret").off().click(function () {
+	$("#ret").click(function () {
 		if($("#imp_in").hasClass("selected")) {
 			$("#imp_in").toggleClass("selected");
 			vertical_connect = !vertical_connect;
@@ -1134,7 +1077,7 @@ function add_event_listeners() {
 			canvas.addEventListener("mousemove", mouseMoveReturn);
 	});
 	
-	$("#imp_el").off().click(function () {
+	$("#imp_el").click(function () {
 		if($("#imp_in").hasClass("selected")) {
 			$("#imp_in").toggleClass("selected");
 			vertical_connect = !vertical_connect;
@@ -1163,6 +1106,14 @@ function add_event_listeners() {
 			modus_1 = modus_2 = null;
 			canvas.addEventListener('mousemove', mouseMoveModus);
 		}
+		
+		var properties = {
+        		"background": "blue"
+            };
+
+            var el = $('#canvas');
+
+            el.pulse(properties, {duration : 1000, pulses : -1});
             
 		clear_return();
 	});
@@ -1170,7 +1121,40 @@ function add_event_listeners() {
 	
 	$(".button").attr("draggable", "true");
 	
-// 	$("#imp_in").off().click(function() {	
+	// $("#con_in").click(function() {
+// 		if($("#imp_in").hasClass("selected")) {
+// 			$("#imp_in").toggleClass("selected");
+// 			vertical_connect = !vertical_connect;
+// 		}
+// 	
+// 		if($("#imp_el").hasClass("selected")) {
+// 			$("#imp_el").toggleClass("selected");
+// 			modus_ponens = !modus_ponens;
+// 		}
+// 	
+// 		if($("#ret").hasClass("selected")) {
+// 			$("#ret").toggleClass("selected");
+// 			return_bar = !return_bar;
+// 		}
+// 	
+// 		if($("#flag_in").hasClass("selected")) {
+// 			$("#flag_in").toggleClass("selected");
+// 			flag_introduction = !flag_introduction;
+// 		}
+// 	
+// 		if($("#flag_end").hasClass("selected")) {
+// 			$("#flag_end").toggleClass("selected");
+// 			flag_end = !flag_end;
+// 		}
+// 		
+// 		$(this).toggleClass("selected");
+// 		horizontal_connect = !horizontal_connect;
+// 		
+// 		clear_modus();
+// 		clear_return();
+// 	});
+	
+// 	$("#imp_in").click(function() {	
 // 		if($("#imp_el").hasClass("selected")) {
 // 			$("#imp_el").toggleClass("selected");
 // 			modus_ponens = !modus_ponens;
@@ -1226,87 +1210,23 @@ function clear_level() {
 	prev_block_status = [];
 	
 	shapes = [];
-	hyp_shapes = [];
 	// RESET MODES
 	return_bar = modus_ponens = flag_introduction = false;
 	flag_level = 1;
 	hyp_1 = hyp_2 = null;
-	
-	$(".hyp .button").remove();
 }
-
-// function load_level(level_id) {
-// 	var div_string;
-// 	clear_level();
-// 	$("#level_start_template").show();
-// 	$("#loading").fadeIn('slow');
-// 	
-// 	setTimeout(function() { $.ajax({
-// 			type: "GET",
-// 			url: "../levels.xml",
-// 			dataType: "xml",
-// 			success: function(xml) {
-// 				var current_level = $(xml).find("level[id=" + level_id + "]");
-// 				var x, y, w, h, neg, fill;
-// 				var rects = [];
-// 
-// 				$(current_level).find("controls").find("control").each(function() {
-// 					append_control($(this).text());
-// 				});
-// 			
-// 				$(current_level).find("assumptions").find("assumption").each(function() {
-// 					div_string = shape_to_div_converter(new Shape (parse_rectangles(this)));
-// 					add_to_button_holder(div_string);
-// 				});
-// 				
-// 				$(current_level).find("hyps").find("hyp").each(function(i) {
-// 					console.log("GET HYPE");
-// 					div_string = shape_to_div_converter_full(new Shape (parse_rectangles(this)));
-// 					$(".hyp:eq(" + i + ")").append(div_string);
-// 				});
-// 				
-// 				$(".hyp .button").each(function() {
-// 					$(this).css({"margin-left": -$(this).width() / 2 +"px"});
-// 					$(this).css({"margin-top": -$(this).height() / 2 +"px"});
-// 					$(this).find(".sub_button").each(function () {
-// 						$(this).css({"border" : "1px solid #eee"});
-// 					});
-// 				});
-// 			
-// 				goal_shape = new Shape (parse_rectangles($(current_level).find("goal")));
-// 			
-// 				if (goal_shape != null) {
-// 					translate_shape(goal_shape, -goal_shape.left.x, -goal_shape.top.y);
-// 					translate_shape(goal_shape, 405 - goal_shape.width / 2, 310 - goal_shape.height / 2);
-// 				}
-// 			
-// 				add_event_listeners();
-// 			
-// 				$("#level_id").text(level_id);
-// 				$("#loading").fadeOut('slow', function () {
-// 					$("#level_start").fadeIn("slow");
-// 				});
-// 				
-// 				populate_shape_prev();
-// 			}
-// 		});
-// 	}, 1000);
-// }
 
 function load_level(level_id) {
 	var div_string;
 	clear_level();
-	$("#start_btn").click(function() {
-		add_event_listeners();
-		$("#level_start_template").fadeOut('slow');
-		$("#level_start").fadeOut('slow', function() {
-			timer_running = true;
-		});
-	});
 	$("#level_start_template").show();
 	$("#loading").fadeIn('slow');
-	setTimeout(function() { 
-				var xml = $.parseXML(xml_string);
+	
+	setTimeout(function() { $.ajax({
+			type: "GET",
+			url: "../levels.xml",
+			dataType: "xml",
+			success: function(xml) {
 				var current_level = $(xml).find("level[id=" + level_id + "]");
 				var x, y, w, h, neg, fill;
 				var rects = [];
@@ -1318,20 +1238,6 @@ function load_level(level_id) {
 				$(current_level).find("assumptions").find("assumption").each(function() {
 					div_string = shape_to_div_converter(new Shape (parse_rectangles(this)));
 					add_to_button_holder(div_string);
-				});
-				
-				$(current_level).find("hyps").find("hyp").each(function(i) {
-					console.log("GET HYPE");
-					div_string = shape_to_div_converter_full(new Shape (parse_rectangles(this)));
-					$(".hyp:eq(" + i + ")").append(div_string);
-				});
-				
-				$(".hyp .button").each(function() {
-					$(this).css({"margin-left": -$(this).width() / 2 +"px"});
-					$(this).css({"margin-top": -$(this).height() / 2 +"px"});
-					$(this).find(".sub_button").each(function () {
-						$(this).css({"border" : "1px solid #eee"});
-					});
 				});
 			
 				goal_shape = new Shape (parse_rectangles($(current_level).find("goal")));
@@ -1349,5 +1255,7 @@ function load_level(level_id) {
 				});
 				
 				populate_shape_prev();
+			}
+		});
 	}, 1000);
 }
