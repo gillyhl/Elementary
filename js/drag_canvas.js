@@ -149,9 +149,7 @@ function end_flag(flag_shape) {
 			delete_index.push(i);
 		}
 	}
-	
-	console.log(shapes);
-	console.log(delete_index);
+	 
 	for (i = delete_index.length - 1; i >= 0; i--)
 		shapes.splice(delete_index[i],1);
 	
