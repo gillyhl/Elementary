@@ -18,7 +18,6 @@ $(document).ready(function () {
 		var button_clicked = $(this);
 		if (tab_id != number_of_tabs) {
 			var delta_left = -parseInt($(".education_content").css("width")) - 3.5;
-			console.log(delta_left);
 			var cur_left = parseInt($("#education_holder").css("left"));
 			
 			cur_left += delta_left;
@@ -31,7 +30,6 @@ $(document).ready(function () {
 					$("#game_rules").show();
 					$("#education .down_arrow").click(function () {
 						$('body').scrollTo($("section").outerHeight() * 2);
-						console.log("HERE");
 					});
 				}
 			});
