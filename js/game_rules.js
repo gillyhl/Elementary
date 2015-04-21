@@ -20,8 +20,7 @@ $(document).ready(function () {
 
 			cur_left += delta_left;
 			tab_id++;
-
-			
+		
 			$("#game_rules_holder").animate({left: cur_left + "px"}, 'slow', function () {
 				if (button_clicked.hasClass("final")) {
 					setCookie("rules_done", 1, 365);

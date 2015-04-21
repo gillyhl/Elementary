@@ -389,7 +389,6 @@ function connect_to_top(shape, selected_shape) {
 // 		else
 			shape.rectangles[shape.rectangles.length - 1].w = new_w;
 	}
-    console.log(shape);
     refresh_shape_data(shape);
     shapes.splice(shapes.indexOf(selected_shape),1);
 
